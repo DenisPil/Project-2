@@ -1,7 +1,7 @@
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 import requests
-from constans import URL
+from constants import URL
 
 
 def scrap_info_table(urlX='une url'):

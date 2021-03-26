@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-from constans import URL_Cat
+from constants import URL_Cat
 
 
 def scrap_urls_books(urlX="url pages one cat"):
