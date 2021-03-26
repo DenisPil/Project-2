@@ -43,7 +43,6 @@ def test():
     dico = urls_categories()
     for keys, elem in dico.items():
         jeanjean = blabla(elem)
-        elema = elem
         print(keys)
         urlX = urls_one_cat_all_pages(blabla(elema))
         urls_books = scrap_urls_books(scrap_urls())
