@@ -9,6 +9,8 @@ def scrap_info_table(urlX='une url'):
     url = urlX
     prod_info = []
     for i in url:
+        print(i)
+        continue
         response = requests.get(i)
         soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -28,17 +30,22 @@ def scrap_info_table(urlX='une url'):
             }
 
         product_information = soup.find('table', {'class': 'table table-striped'}).findAll('tr')
-        for prod in product_information:
-            th = prod.find('th').text.replace(' ', ('_'))
-            td = prod.find('td').text.replace('In stock', '')
-            if td == '':
-                td = ('no info')
-            one_info = {th: td}
-            info_dico.update(one_info)
+        dict_prod_information = process_tr(product_information)
+        info_dico.update(dict_prod_information)
         prod_info.append(info_dico)
 
-    # print(len(prod_info))
     return(prod_info)
+
+def process_tr(product_information):
+    info_dico = dict()
+    for prod in product_information:
+        th = prod.find('th').text.replace(' ', ('_'))
+        td = prod.find('td').text.replace('In stock', '')
+        if td == '':
+            td = ('no info')
+        one_info = {th: td}
+        info_dico.update(one_info)
+    return info_dico
 
 
 if __name__ == '__main__':

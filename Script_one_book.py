@@ -3,7 +3,7 @@ from def_save_info import save_info
 
 
 def scrap_one_book():
-    urlX = scrap_info_table('https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html')
+    urlX = scrap_info_table(['https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html'])
 
     return urlX
 

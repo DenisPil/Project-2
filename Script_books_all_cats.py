@@ -12,9 +12,9 @@ def blabla(elema):
     return(jeanjean)
 
 
-def scrap_urls():
+def scrap_urls(truc):
 
-    urlX = urls_one_cat_all_pages(blabla())
+    urlX = urls_one_cat_all_pages(truc)
 
     return urlX
 
@@ -42,9 +42,8 @@ def test():
 
     dico = urls_categories()
     for keys, elem in dico.items():
-        jeanjean = blabla(elem)
-        print(keys)
-        urlX = urls_one_cat_all_pages(blabla(elema))
+        print(keys, elem)
+        urlX = urls_one_cat_all_pages(elem)
         urls_books = scrap_urls_books(scrap_urls())
         books = scrap_info_table(scrap_books_urls())
         books_in_csv = save_info('All-books-cat-' + keys + '.csv', info_books())
