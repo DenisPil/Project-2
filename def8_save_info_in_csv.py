@@ -1,5 +1,5 @@
 from def6_send_urls_books_to_find_info_books import send_urls_books_to_find_info_books
-from def9_create_csv import create_csv
+from def9_append_csv import append_csv
 
 
 def save_info_in_csv():
@@ -7,7 +7,7 @@ def save_info_in_csv():
 
     for elem in category:
 
-        create_csv(elem)
+        append_csv(elem)
 
     return(elem)
 

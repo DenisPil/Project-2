@@ -11,7 +11,7 @@ def find_urls_books(urlX="url pages one cat"):
         response = requests.get(i)
         soup = BeautifulSoup(response.text, 'html.parser')
         article_class = soup.findAll("article")
-        
+
         for article in article_class:
             a = article.find("a")
             link = a["href"]
