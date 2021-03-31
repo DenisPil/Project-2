@@ -2,11 +2,11 @@ from def2_make_list_of_dict_for_all_cat_all_pages import make_list_of_dict_for_a
 from def5_find_urls_books import find_urls_books
 
 
-def send_urls_pages_to_find_urls_books():
+def send_urls_pages_to_find_urls_books(def2):
 
     dict_urls_pages_books_and_name_cat = {}
     listdict_cat_name_and_urls_pages_books = []
-    urls_pages = make_list_of_dict_for_all_cat_all_pages()
+    urls_pages = def2
 
     for elem in urls_pages:
         url_cat = (elem['url_category'])

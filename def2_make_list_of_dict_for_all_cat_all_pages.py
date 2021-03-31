@@ -1,14 +1,12 @@
 from def1_get_urls_categories import get_urls_for_all_cat
 from def3_find_all_pages_for_one_category import find_all_pages_for_one_category
 
-# test =[{'name_category': 'academic','url_category':'https://books.toscrape.com/catalogue/category/books/academic_40/index.html'},{'name_category': 'self-help','url_category': 'https://books.toscrape.com/catalogue/category/books/self-help_41/index.html'}]
 
-
-def make_list_of_dict_for_all_cat_all_pages():
+def make_list_of_dict_for_all_cat_all_pages(def1):
 
     dict_pages = {}
     list_dict_cat_pages = []
-    cat = get_urls_for_all_cat()
+    cat = def1
 
     for elem in cat:
         url_cat = (elem['url_category'])

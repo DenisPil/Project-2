@@ -45,7 +45,7 @@ def process_tr(product_information):
             td = ('no info')
         one_info = {th: td}
         info_dico.update(one_info)
-    # print (info_dico)
+    #print (info_dico)
     return info_dico
 
 
