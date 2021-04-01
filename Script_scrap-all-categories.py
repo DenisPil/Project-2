@@ -1,8 +1,11 @@
-from def1_get_urls_categories import get_urls_for_all_cat
-from def2_make_list_of_dict_for_all_cat_all_pages import make_list_of_dict_for_all_cat_all_pages
-from def4_send_urls_pages_to_find_urls_books import send_urls_pages_to_find_urls_books
-from def6_send_urls_books_to_find_info_books import send_urls_books_to_find_info_books
-from def8_save_info_in_csv import save_info_in_csv
+from def_get_urls_categories import get_urls_for_all_cat
+from def_make_list_of_dict_for_all_cat_all_pages import\
+     make_list_of_dict_for_all_cat_all_pages
+from def_send_urls_pages_to_find_urls_books import\
+     send_urls_pages_to_find_urls_books
+from def_send_urls_books_to_find_info_books import\
+     send_urls_books_to_find_info_books
+from def_save_info_in_csv import save_info_in_csv
 
 
 def get_urls_categories():
@@ -18,13 +21,15 @@ def make_list_of_dict_all_pages():
 
 
 def send_pages_find_urls_books():
-    urls_books = send_urls_pages_to_find_urls_books(make_list_of_dict_all_pages())
+    urls_books = send_urls_pages_to_find_urls_books(
+        make_list_of_dict_all_pages())
 
     return urls_books
 
 
 def urls_books_find_info_books():
-    info_books = send_urls_books_to_find_info_books(send_pages_find_urls_books())
+    info_books = send_urls_books_to_find_info_books(
+        send_pages_find_urls_books())
 
     return info_books
 

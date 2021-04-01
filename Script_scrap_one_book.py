@@ -1,15 +1,16 @@
-from def4_send_urls_pages_to_find_urls_books import send_urls_pages_to_find_urls_books
-from def6_send_urls_books_to_find_info_books import send_urls_books_to_find_info_books
-from def8_save_info_in_csv import save_info_in_csv
-from constants import BOOK_TEST
+from def_send_urls_pages_to_find_urls_books import\
+     send_urls_pages_to_find_urls_books
+from def_send_urls_books_to_find_info_books import\
+     send_urls_books_to_find_info_books
+from def_save_info_in_csv import save_info_in_csv
+from constants import BOOK
 
 
 def urls_books_find_info_books():
     info = []
-    dict_all_info = {'name_category': 'A Light in the Attic', 'url_book': BOOK_TEST}
+    dict_all_info = {'name_category': 'Poetry', 'url_book': BOOK}
     info.append(dict_all_info)
     info_books = send_urls_books_to_find_info_books(info)
-    print(info)
 
     return info_books
 
