@@ -14,3 +14,5 @@ FIELDNAMES = [
                 'number_available', 'product_description', 'category',
                 'review_rating', 'image_url'
              ]
+
+REPERTORY_NAME = "scraping project-2"
