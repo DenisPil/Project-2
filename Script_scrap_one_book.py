@@ -15,11 +15,11 @@ def urls_books_find_info_books():
     return info_books
 
 
-def save_in_csv():
+def save_one_book():
     save = save_info_in_csv(urls_books_find_info_books())
 
     return 0
 
 
 if __name__ == '__main__':
-    save_in_csv()
+    save_one_book()
