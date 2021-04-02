@@ -1,5 +1,6 @@
 import os
 from urllib.request import build_opener
+from constants import REPERTORY
 
 
 # Fonction de création de répertoire.
@@ -33,7 +34,7 @@ def save_images(urlX):
         name = url_book.replace('https://books.toscrape.com/catalogue/', '')\
             .replace('/index.html', '')
         # Ouverture du répertoire ou sera copier les images.
-        os.chdir('C:/OpenClassrooms/Project-2/' + category)
+        os.chdir(REPERTORY + category)
         # Création du nom du fichier avec le nom du livre.
         filename = "{}.png".format(name)
         # On ouvre l'url de l'image et on la copie dans un fichier,
@@ -44,6 +45,6 @@ def save_images(urlX):
         except FileExistsError:
             pass
     # A la fin du processus on referme le répertoire.
-    os.chdir('C:/OpenClassrooms/Project-2/')
+    os.chdir(REPERTORY)
 
     return 0

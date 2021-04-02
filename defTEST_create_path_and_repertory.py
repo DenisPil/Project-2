@@ -1,4 +1,4 @@
-from constants import REPERTORY_NAME
+#from constants import REPERTORY_NAME
 import os
 
 

@@ -1,7 +1,7 @@
-from constants import REPERTORY_NAME
 from Script_scrap_one_book import save_one_book
 from Script_scrap_one_category import save_one_category
 from Script_scrap_all_categories import save_all_categories
+from defTEST_create_path_and_repertory import create_path_and_repertory
 
 
 def main():
@@ -25,6 +25,7 @@ def main():
             script = True
         else:
             script = False
+
 
 if __name__ == '__main__':
     main()

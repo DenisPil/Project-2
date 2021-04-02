@@ -15,4 +15,4 @@ FIELDNAMES = [
                 'review_rating', 'image_url'
              ]
 
-REPERTORY_NAME = "scraping project-2"
+REPERTORY = 'C:/OpenClassrooms/Project-2/'
