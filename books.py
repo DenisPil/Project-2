@@ -5,13 +5,13 @@ from constants import URL
 
 
 # Fonction qui récolte les informations d'un livre à partir d'une url
-def search_info(url_book):
+def search_info(urls_book):
 
     prod_info = list()
 
-    for elem in url_book:
+    for url in urls_book:
 
-        response = requests.get(elem)
+        response = requests.get(url)
         soup = BeautifulSoup(response.content, 'html.parser')
         # Recherche d'une partie des informations présentes sur la page.
         title = soup.find('h1').text
@@ -23,7 +23,7 @@ def search_info(url_book):
         image_url = urljoin(URL, image_url_no_join)
         # Création d'un dict qui contiendra toutes les informations.
         info_dico = {
-            'product_page_url': elem,
+            'product_page_url': url,
             'title': title,
             'product_description': product_description,
             'category': category,
