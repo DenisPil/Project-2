@@ -2,7 +2,7 @@ from pathlib import Path
 
 URL = "https://books.toscrape.com/"
 
-URL_CAT = "https://books.toscrape.com/catalogue/"
+URL_CATEGORY = "https://books.toscrape.com/catalogue/"
 
 CATEGORY = "https://books.toscrape.com/catalogue/category/books/sports-and-games_17/index.html"
 

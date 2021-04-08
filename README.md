@@ -16,7 +16,7 @@ $ source <le nom de l'environnement>/bin/activate
 requirements.txt. Entrer la commande suivante pour installer tous les packages.
 $ pip install -r requirements.txt
 
-Une fois l'environnement créé et activé, lancer le fichier main.py et suivre les instructions.
+Une fois l'environnement créé et activé, lancer le fichier main.py.
 À partir d'un terminal pour lancer le fichier vous pouvez rentrer la commande :
 $ python3 main.py
 

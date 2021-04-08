@@ -5,12 +5,11 @@ from constants import URL
 
 
 # Fonction qui récolte les informations d'un livre à partir d'une url
-def info_book(url_book):
+def search_info(url_book):
 
-    prod_info = []
-    url = url_book
+    prod_info = list()
 
-    for elem in url:
+    for elem in url_book:
 
         response = requests.get(elem)
         soup = BeautifulSoup(response.content, 'html.parser')
@@ -47,8 +46,6 @@ def info_book(url_book):
 # Fonction qui cherche les informations grace à la variable créée plus haut.
 def process_tr(product_information):
 
-    """ product_information = variable ligne 34. """
-
     info_dico = dict()
 
     for prod in product_information:
@@ -61,7 +58,7 @@ def process_tr(product_information):
         one_info = {th: td}
         info_dico.update(one_info)
 
-    # Changement, nom de clé et suppression des infos inutiles.
+    # Changement : nom de clé et suppression des infos inutiles.
     info_dico['universal_product_code'] = info_dico.pop('UPC')
     info_dico['price_including_tax'] = info_dico.pop('Price_(incl._tax)')
     info_dico['price_excluding_tax'] = info_dico.pop('Price_(excl._tax)')

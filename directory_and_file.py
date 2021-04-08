@@ -3,7 +3,6 @@ import os
 import csv
 from constants import FIELDNAMES
 from constants import DIRECTORY
-from pathlib import Path
 from urllib.request import build_opener
 
 
@@ -38,18 +37,13 @@ def create_csv(name, info):
             # Chaque élement crée une nouvelle ligne.
             writer.writerow(elem)
 
-    return 0
-
 
 # Fonction qui sauvegarde une image.
 def save_images(url_image):
 
-    url = url_image
-    # build_opener() est un moyen simple de définir des en-têtes une seule
-    # fois pour toutes les requêtes à envoyer.
     opener = build_opener()
     # Création d'une boucle qui cherche certaines infos dans un dict.
-    for elem in url:
+    for elem in url_image:
 
         url_book = elem['product_page_url']
         url_image = elem['image_url']
@@ -74,5 +68,3 @@ def save_images(url_image):
             pass
     # A la fin du processus on referme le répertoire.
     os.chdir(DIRECTORY)
-
-    return 0
