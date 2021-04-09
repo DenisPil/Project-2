@@ -7,6 +7,8 @@ from constants import URL
 # Fonction qui récolte les informations d'un livre à partir d'une url
 def search_info(urls_book):
 
+    """ urls_book = list of urls books from search_books() """
+
     prod_info = list()
 
     for url in urls_book:
@@ -32,7 +34,9 @@ def search_info(urls_book):
                 }
         # Création d'une variable qui cherche dans 'table table-striped'.
         product_information = soup.find('table',
-            {'class': 'table table-striped'}).findAll('tr')
+                                        {'class':
+                                            'table table-striped'})\
+            .findAll('tr')
         # Création d'un dict qui récupère les infos de la fonction process_tr.
         dict_prod_information = process_tr(product_information)
         # On rassemble les deux dict avec toutes les infos.
@@ -45,6 +49,9 @@ def search_info(urls_book):
 
 # Fonction qui cherche les informations grace à la variable créée plus haut.
 def process_tr(product_information):
+
+    """ product_information = variable from search_info(), this variable looks
+        for book information in the 'table table-striped' section """
 
     info_dico = dict()
 

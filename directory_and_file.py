@@ -4,6 +4,7 @@ import csv
 from constants import FIELDNAMES
 from constants import DIRECTORY
 from urllib.request import build_opener
+from constants import URL_CATEGORY
 
 
 # Fonction qui créee un répertoire.
@@ -21,6 +22,9 @@ def create_directory():
 
 # Fonction qui créee et ajoute les informations.
 def create_csv(name, info):
+
+    """ name = category name from main(),
+        info = book information from  get_info_book in main(). """
 
     with open(
         name + '.csv', 'w',  encoding='utf-8-sig', newline='')\
@@ -41,6 +45,8 @@ def create_csv(name, info):
 # Fonction qui sauvegarde une image.
 def save_images(url_image):
 
+    """ url_image = image url in get_info_book() from main(). """
+
     opener = build_opener()
     # Création d'une boucle qui cherche certaines infos dans un dict.
     for elem in url_image:
@@ -48,7 +54,7 @@ def save_images(url_image):
         url_book = elem['product_page_url']
         url_image = elem['image_url']
         category = elem['category']
-        name = url_book.replace('https://books.toscrape.com/catalogue/', '')\
+        name = url_book.replace(URL_CATEGORY, '')\
             .replace('/index.html', '')
         # Création du répertoire où sera copié les images.
         try:

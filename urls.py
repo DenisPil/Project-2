@@ -44,6 +44,8 @@ def search_category():
 # Fonction qui cherche si une catégorie a plusieurs pages.
 def search_pages_category(dict_urls):
 
+    """ dict_urls = dict of urls from search_category() """
+
     # L'objet Session() permet de conserver des paramètres entre plusieurs
     # requêtes. Ensuite on lui envoi une url et il cherche s'il y a
     # d'autres pages.
@@ -69,6 +71,9 @@ def search_pages_category(dict_urls):
 
 # Fonction qui cherche les urls des livres.
 def search_books(urls_cat_pages):
+
+    """ urls_cat_pages = list of all pages categories
+        from search_pages_category()"""
 
     links_books = list()
     # Création d'une boucle qui cherche les livres dans une page.
