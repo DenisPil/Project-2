@@ -7,7 +7,10 @@ from urllib.request import build_opener
 from constants import URL_CATEGORY
 
 
-# Fonction qui créee un répertoire.
+""" Fonction qui crée un répertoire ou sera copié toutes les informations.
+    Utilisation du module pathlib. """
+
+
 def create_directory():
 
     path = Path('book_to_scrap')
@@ -20,7 +23,10 @@ def create_directory():
     return directory
 
 
-# Fonction qui créee et ajoute les informations.
+""" Fonction qui crée le .csv et copie toutes les informations.
+    Utilisation du module csv. """
+
+
 def create_csv(name, info):
 
     """ name = category name from main(),
@@ -42,7 +48,10 @@ def create_csv(name, info):
             writer.writerow(elem)
 
 
-# Fonction qui sauvegarde une image.
+""" Fonction qui copie toutes les images.
+    Création du répertoire avec le nom de la catégorie."""
+
+
 def save_images(url_image):
 
     """ url_image = image url in get_info_book() from main(). """

@@ -4,10 +4,14 @@ import requests
 from constants import URL
 
 
-# Fonction qui récolte les informations d'un livre à partir d'une url
+""" Fonction qui recherche une partie des informations d'un livre.
+    Utilisation des modules resquests, beautifulsoup.
+    Renvoie une liste contenant toutes les informations d'un livre."""
+
+
 def search_info(urls_book):
 
-    """ urls_book = list of urls books from search_books() """
+    """urls_book = list of urls books from search_books()"""
 
     prod_info = list()
 
@@ -47,7 +51,12 @@ def search_info(urls_book):
     return prod_info
 
 
-# Fonction qui cherche les informations grace à la variable créée plus haut.
+""" Fonction qui recherche une autre partie des informations d'un livre.
+    les informations sont modifié (changement de noms
+    suppression de ce qui est inutile).
+    Renvoie un dict contenant les informations de 'table-striped' """
+
+
 def process_tr(product_information):
 
     """ product_information = variable from search_info(), this variable looks
@@ -56,7 +65,6 @@ def process_tr(product_information):
     info_dico = dict()
 
     for prod in product_information:
-
         th = prod.find('th').text.replace(' ', ('_'))
         td = prod.find('td').text.replace('In stock', '')
         # Si une information est manquante, on l'indique.

@@ -4,6 +4,10 @@ import books
 import directory_and_file
 
 
+"""Fonction principale qui active le programme. Elle va lancer une à une
+   les étapes pour extraire les informations."""
+
+
 def main():
 
     get_url_cat = urls.search_category()
