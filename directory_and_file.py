@@ -48,7 +48,8 @@ def create_csv(name, info):
             writer.writerow(elem)
 
 
-""" Fonction qui copie toutes les images.
+""" Fonction qui copie toutes les images..
+    Utilisation du module os.
     Création du répertoire avec le nom de la catégorie."""
 
 
