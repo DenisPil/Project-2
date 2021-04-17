@@ -37,10 +37,8 @@ def search_info(urls_book):
             'image_url': image_url
                 }
         # Création d'une variable qui cherche dans 'table table-striped'.
-        product_information = soup.find('table',
-                                        {'class':
-                                            'table table-striped'})\
-            .findAll('tr')
+        product_information = soup.find('table', {'class':
+                                        'table table-striped'}).findAll('tr')
         # Création d'un dict qui récupère les infos de la fonction process_tr.
         dict_prod_information = process_tr(product_information)
         # On rassemble les deux dict avec toutes les infos.
