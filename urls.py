@@ -11,10 +11,9 @@ from constants import URL_CATEGORY
 
 def search_category():
 
-    list_urls_catategories = list()
-    url_category = URL
+    list_urls_categories = list()
     # Création objet requests.get permet de récupérer une page web.
-    response = requests.get(url_category)
+    response = requests.get(URL)
 
     if response.ok:
         # Création du soup qui va analyser le code HTML du site internet.
@@ -38,9 +37,9 @@ def search_category():
                                 'url_category': url_complete
                               }
             # Intégration des dicts à une liste (un dict une catégorie).
-            list_urls_catategories.append(names_and_urls)
+            list_urls_categories.append(names_and_urls)
 
-    return list_urls_catategories
+    return list_urls_categories
 
 
 """ Fonction qui recherche si une catégorie contient plusieurs pages.
